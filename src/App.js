@@ -49,13 +49,20 @@ class App extends Component {
         })
       })
   }
+  accountInfoClick = () => {
+
+  }
   render() {
     return (
       <div className='siteBG'>
         <Header />
         <Route path='/' exact render={() => (<WelcomePage />)} />
-        <Route path='/accounts' render={() => (<AccountList />)} />
+
         <Route path='/transactions' render={() => (<TransList transactions={this.state.transactions}/>)} />
+
+        <Route path='/accounts' render={() => (<AccountList {...this.state} />)} />
+
+
         <Footer />
       </div>
     );

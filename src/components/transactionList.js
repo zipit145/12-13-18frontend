@@ -1,6 +1,7 @@
 import React from 'react'
 
 const TransList = (props) => {
+
     return(
         <div className="transaction-list">
             {props.transactions.map(transaction => {
@@ -34,6 +35,7 @@ const TransList = (props) => {
                     </div>
                 )
             })}
+
         </div>
     )
 }
