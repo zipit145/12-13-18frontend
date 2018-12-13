@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header'
 import Footer from './components/footer'
@@ -8,6 +7,48 @@ import TransList from './components/transactionList'
 import WelcomePage from './components/welcomePage'
 
 class App extends Component {
+
+  constructor (props) {
+    super();
+    this.state ={
+      users: [],
+      accounts: [],
+      transactions: []
+    }
+  }
+  componentDidMount() {
+     this.loadUsers()
+    this.loadAccounts()
+    this.loadTransactions()
+  }
+  loadUsers = () => {
+    fetch('https://banksdb.herokuapp.com/users')
+    .then(result => result.json())
+    .then((response) => {
+      this.setState({
+        users: response
+      })
+    })
+  }
+  loadAccounts = () => {
+    fetch('https://banksdb.herokuapp.com/accounts')
+    .then(result => result.json())
+    .then((response) => {
+      this.setState({
+        accounts: response
+      })
+    })
+  }
+  loadTransactions = () => {
+    fetch('https://banksdb.herokuapp.com/transactions')
+    .then(result => result.json())
+    .then((response) => {
+      this.setState({
+        transactions: response
+      })
+    })
+  }
+ 
   render() {
     return (
       <div>
