@@ -57,8 +57,12 @@ class App extends Component {
       <div className='siteBG'>
         <Header />
         <Route path='/' exact render={() => (<WelcomePage />)} />
+
+        <Route path='/transactions' render={() => (<TransList transactions={this.state.transactions}/>)} />
+
         <Route path='/accounts' render={() => (<AccountList {...this.state} />)} />
-        <Route path='/transactions/id/:id' render={() => (<TransList {...this.state} />)} />
+
+
         <Footer />
       </div>
     );
