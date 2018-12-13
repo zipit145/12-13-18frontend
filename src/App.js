@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 import './App.css';
 import Header from './components/Header'
 import Footer from './components/footer'
@@ -8,54 +9,53 @@ import WelcomePage from './components/welcomePage'
 
 class App extends Component {
 
-  constructor (props) {
+  constructor(props) {
     super();
-    this.state ={
+    this.state = {
       users: [],
       accounts: [],
       transactions: []
     }
   }
   componentDidMount() {
-     this.loadUsers()
+    this.loadUsers()
     this.loadAccounts()
     this.loadTransactions()
   }
   loadUsers = () => {
     fetch('https://banksdb.herokuapp.com/users')
-    .then(result => result.json())
-    .then((response) => {
-      this.setState({
-        users: response
+      .then(result => result.json())
+      .then((response) => {
+        this.setState({
+          users: response
+        })
       })
-    })
   }
   loadAccounts = () => {
     fetch('https://banksdb.herokuapp.com/accounts')
-    .then(result => result.json())
-    .then((response) => {
-      this.setState({
-        accounts: response
+      .then(result => result.json())
+      .then((response) => {
+        this.setState({
+          accounts: response
+        })
       })
-    })
   }
   loadTransactions = () => {
     fetch('https://banksdb.herokuapp.com/transactions')
-    .then(result => result.json())
-    .then((response) => {
-      this.setState({
-        transactions: response
+      .then(result => result.json())
+      .then((response) => {
+        this.setState({
+          transactions: response
+        })
       })
-    })
   }
- 
   render() {
     return (
-      <div className="siteBG">
+      <div className='siteBG'>
         <Header />
-        <WelcomePage />
-        <AccountList />
-        <TransList />
+        <Route path='/' exact render={() => (<WelcomePage />)} />
+        <Route path='/accounts' render={() => (<AccountList />)} />
+        <Route path='/transactions' render={() => (<TransList />)} />
         <Footer />
       </div>
     );
