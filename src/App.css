@@ -17,3 +17,18 @@ footer {
   width: 100vw;
   height: 100vh;
 }
+
+.transaction-container {
+  background-color: lightslategray;
+  border-style: solid;
+  border-radius: 10%;
+  max-width: 200px;
+}
+
+.transaction-list {
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-items: center;
+}

@@ -55,7 +55,7 @@ class App extends Component {
         <Header />
         <Route path='/' exact render={() => (<WelcomePage />)} />
         <Route path='/accounts' render={() => (<AccountList />)} />
-        <Route path='/transactions' render={() => (<TransList />)} />
+        <Route path='/transactions' render={() => (<TransList transactions={this.state.transactions}/>)} />
         <Footer />
       </div>
     );
