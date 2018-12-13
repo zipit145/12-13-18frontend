@@ -8,8 +8,7 @@ import TransList from './components/transactionList'
 import WelcomePage from './components/welcomePage'
 
 class App extends Component {
-
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       users: [],
@@ -57,8 +56,8 @@ class App extends Component {
       <div className='siteBG'>
         <Header />
         <Route path='/' exact render={() => (<WelcomePage />)} />
-        <Route path='/accounts' render={() => (<AccountList {...this.state} />)} />
-        <Route path='/transactions/id/:id' render={() => (<TransList {...this.state} />)} />
+        <Route path='/accounts' render={() => (<AccountList accountInfoClick={this.accountInfoClick} {...this.state} />)} />
+        <Route path='/transactions/id/:id' render={(props) => (<TransList {...props} {...this.state} />)} />
         <Footer />
       </div>
     );
