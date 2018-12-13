@@ -7,3 +7,13 @@ footer {
   width: 100vw;
   justify-content: center;
 }
+
+.siteBG {
+  background-image: url("https://i.kinja-img.com/gawker-media/image/upload/s--pIYDv5R9--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/17kdjxvdqvygyjpg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}

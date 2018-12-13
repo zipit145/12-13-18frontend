@@ -10,7 +10,7 @@ import WelcomePage from './components/welcomePage'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="siteBG">
         <Header />
         <WelcomePage />
         <AccountList />
